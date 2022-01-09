@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html style="background-color: #dfe2ff">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Price Prediction</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='./Deployment/static/css/index.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #dfe2ff">
+    <div
+      class="container-fluid"
+      style="display: flex; justify-content: center; margin-top: 10px"
+    >
+      <div class="card shadow p-3 bg-white rounded" style="width: 60rem">
+        <div class="row no-gutters">
+          <div class="col-md-6">
+            <img
+              src="{{ url_for('static', filename='icons/logo.png') }}"
+              class="card-img-top"
+              alt="logo"
+              style="width: 200px; margin-left: 30%; margin-top: 15%"
+            />
+          </br>
+        </br>
+            <h2> A Flask Web App for price suggestion of second hand products</h2>
+            <h4> Made By Pranjal Bisht</h4>
+			<br/>
+			<br/>
+            <img
+              src="{{ url_for('static', filename='icons/illustration.jpg') }}"
+              class="card-img"
+              alt="illustration"
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <form action="{{ url_for('predict') }}" method="post">
+                <div class="form-group">
+                  <label for="exampleInputName">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                  />
+                </div>
+                <div class="row">
+                  <div class="form-group col-6">
+                    <label for="exampleFormControlSelect">Condition</label>
+                    <select
+                      class="form-control"
+                      id="condition"
+                      name="condition"
+                    >
+                      <option value="1">New</option>
+                      <option value="2">Like New</option>
+                      <option value="3">Good</option>
+                      <option value="4">Fair</option>
+                      <option value="5">Poor</option>
+                    </select>
+                  </div>
+                  
+
+                <div class="row">
+                  <div class="form-group col-6">
+                    <label for="exampleInputPassword1">Category</label>
+                    <input type="text" class="form-control" id="category" name="category"/>
+                    <small class="form-text text-muted">For Example: Women/Jewelry/Necklaces</small>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="exampleInputPassword1">Brand</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="brand"
+                      name="brand"
+                    />
+                  </div>
+                </div>
+				<div class="form-group col-6">
+                    <label for="exampleFormControlSelect1">Shipping</label>
+                    <select class="form-control" id="shipping" name="shipping">
+                      <option value="1">Seller</option>
+                      <option value="0">Buyer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Description</label>
+                  <textarea
+                    class="form-control"
+                    id="description"
+                    rows="4"
+                    name="description"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Predict Price
+                </button>
+              </form>
+            </div>
+            <div class="prediction-txt" style="margin-left: 20px; color: teal">
+				<h4>Suggested Price: ${{prediction}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
