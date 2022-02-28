@@ -1,5 +1,4 @@
-# 8e23ae047060859fed073e78fb70e4c2f5160b57
-Deadline: 2021-12-27T23:59:59+09:00
+# Kaggle Challenge
 
 # Task:
 
