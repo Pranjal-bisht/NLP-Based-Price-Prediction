@@ -2,7 +2,7 @@
 
 # Task:
 
-To Use Machine Learning to Predict Price of Product listed on mercari app and get rmsle < 0.5 and Create a web app to take inputs and display the predicted price.
+To Use Machine Learning to Predict Price of Product listed and get rmsle < 0.5 and Create a web app to take inputs and display the predicted price.
 
 # Directory structure:
 <pre>
